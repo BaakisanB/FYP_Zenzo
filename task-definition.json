@@ -1,0 +1,21 @@
+{
+    "family": "my-fastapi-task",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": ["FARGATE"],
+    "executionRoleArn": "arn:aws:iam::463470941589:role/ecsTaskExecutionRole",
+    "cpu": "512",
+    "memory": "1024",
+    "containerDefinitions": [
+        {
+            "name": "my-fastapi-container",
+            "image": "463470941589.dkr.ecr.us-east-1.amazonaws.com/my-fastapi-model:latest",
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 80
+                }
+            ],
+            "essential": true
+        }
+    ]
+}
